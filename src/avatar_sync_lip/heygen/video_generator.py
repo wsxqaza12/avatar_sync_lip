@@ -44,7 +44,9 @@ class HeyGenVideoGenerator:
         response.raise_for_status()
 
         # 確保保存路徑存在
-        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        save_dir = os.path.dirname(save_path)
+        if save_dir:  # 只有在 save_path 包含目錄部分時才創建目錄
+            os.makedirs(save_dir, exist_ok=True)
 
         with open(save_path, 'wb') as file:
             file.write(response.content)
