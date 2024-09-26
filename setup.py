@@ -8,7 +8,7 @@ setup(
     description="A package for generating videos using HeyGen API",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/heygen_video_generator",
+    url="https://github.com/wsxqaza12/avatar_sync_lip",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     install_requires=[

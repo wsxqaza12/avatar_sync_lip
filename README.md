@@ -1,17 +1,20 @@
-# HeyGen Video Generator
+# Avatar Sync Lip
 
-HeyGen Video Generator 是一個 Python 包，提供了一個簡單的接口來使用 HeyGen API 生成視頻。
+Avatar Sync Lip 是一個 Python 包，提供了一個簡單的接口來使用 HeyGen API 生成影片以及全身動畫 avatar。
 
 ## 功能
+### HeyGen API
+- 上傳音檔文件
+- 使用預定義的模板生成影片
+- 下載生成的影片到指定路徑
 
-- 上傳音頻文件
-- 使用預定義的模板生成視頻
-- 下載生成的視頻到指定路徑
+### 全身動畫 avatar
+- 製作中
 
+# HeyGen API 文件
 ## 安裝
 
-你可以使用 pip 來安裝這個包：
-```
+你可以使用 pip 來安裝這個包：```
 bash
 pip install heygen_video_generator
 ```
@@ -27,12 +30,12 @@ from avatar_sync_lip import HeyGenVideoGenerator
 generator = HeyGenVideoGenerator(api_key='your_api_key')
 ```
 
-3. 使用 generate_video 方法生成視頻：
+3. 使用 generate_video 方法生成影片：
 ```python
 video_url = generator.generate_video(character='man1', audio_file_path='path/to/audio.mp3', save_path='path/to/save/video.mp4')
 ```
 
-這個方法會上傳音頻文件，使用指定的模板生成視頻，然後將視頻下載到指定的路徑。它還會返回生成的視頻的 URL。
+這個方法會上傳音檔文件，使用指定的模板生成影片，然後將影片下載到指定的路徑。它還會返回生成的影片的 URL。
 
 ## 配置
 
@@ -73,7 +76,6 @@ video_url = generator.generate_video(character='man1', audio_file_path='path/to/
 
 你可以在 `generate_video` 方法中指定要使用的模板。
 
-## 依賴
 
-- requests
-- python-dotenv
+# 全身動畫 avatar 文件
+ 製作中
