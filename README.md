@@ -16,7 +16,7 @@ Avatar Sync Lip 是一個 Python 包，提供了一個簡單的接口來使用 H
 
 你可以使用 pip 來安裝這個包：
 ```bash
-pip install avatar_sync_lip-0.1.0-py3-none-any.whl
+pip install avatar_sync_lip-0.1.1-py3-none-any.whl
 ```
 
 ## 使用
