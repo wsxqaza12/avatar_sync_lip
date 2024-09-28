@@ -29,15 +29,23 @@ from avatar_sync_lip import HeyGenVideoGenerator
 
 2. 創建 HeyGenVideoGenerator 實例，需要提供 API 密鑰：
 ```python
-generator = HeyGenVideoGenerator(api_key='your_api_key')
+generator = HeyGenVideoGenerator(api_key='HeyGen_key')
 ```
 
 3. 使用 generate_video 方法生成影片：
 ```python
-video_url = generator.generate_video(character='man1', audio_file_path='path/to/audio.mp3', save_path='path/to/save/video.mp4')
+video_url = generator.generate_video(
+    character='man1',
+    audio_file_path='path/to/audio.mp3',
+    save_path='path/to/save/video.mp4'
+)
 ```
-
 這個方法會上傳音檔文件，使用指定的模板生成影片，然後將影片下載到指定的路徑。它還會返回生成的影片的 URL。
+
+## 參數說明
+- `character`：要使用的角色名稱
+- `audio_file_path`：音頻文件的路徑
+- `save_path`：生成的視頻保存路徑
 
 ## 支持的角色
 
@@ -95,7 +103,7 @@ generator = FullBodyAvatarGenerator(api_url="http://0.0.0.0:1234")
 ```python
 video_url = generator.generate_full_body_avatar(
     audio_path='test.mp3',
-    character_name='woman1',
+    character='woman1',
     save_path='input/video.mp4'
 )
 ```
@@ -105,7 +113,7 @@ video_url = generator.generate_full_body_avatar(
 ## 參數說明
 
 - `audio_path`：音頻文件的路徑
-- `character_name`：要使用的角色名稱
+- `character`：要使用的角色名稱
 - `save_path`：生成的視頻保存路徑
 
 ## 支持的角色
