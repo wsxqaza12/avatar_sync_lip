@@ -8,14 +8,14 @@ class FullBodyAvatarGenerator:
     def __init__(self, api_url):
         self.api_url = api_url
 
-    def generate_full_body_avatar(self, audio_path, character_name, save_path):
-        if character_name not in ALLOWED_CHARACTERS:
+    def generate_full_body_avatar(self, audio_path, character, save_path):
+        if character not in ALLOWED_CHARACTERS:
             raise ValueError(
                 f"無效的角色名稱。允許的角色名稱為: {', '.join(ALLOWED_CHARACTERS)}")
 
         # 步驟1：上傳音頻並獲取video_id
         video_id = self._upload_audio_and_get_video_id(
-            audio_path, character_name)
+            audio_path, character)
 
         # 步驟2：等待並獲取視頻URL
         video_url = self._wait_for_video_completion(video_id)
@@ -26,10 +26,10 @@ class FullBodyAvatarGenerator:
 
         return video_url
 
-    def _upload_audio_and_get_video_id(self, audio_path, character_name):
+    def _upload_audio_and_get_video_id(self, audio_path, character):
         url = f"{self.api_url}/process_video"
         files = {'audio': open(audio_path, 'rb')}
-        data = {'character_name': character_name}
+        data = {'character': character}
         response = requests.post(url, files=files, data=data)
         response.raise_for_status()
         return response.json()['video_id']
