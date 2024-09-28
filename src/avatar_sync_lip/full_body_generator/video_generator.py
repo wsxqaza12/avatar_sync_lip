@@ -29,7 +29,7 @@ class FullBodyAvatarGenerator:
     def _upload_audio_and_get_video_id(self, audio_file_path, character):
         url = f"{self.api_url}/process_video"
         files = {'audio': open(audio_file_path, 'rb')}
-        data = {'character': character}
+        data = {'character_name': character}
         response = requests.post(url, files=files, data=data)
         response.raise_for_status()
         return response.json()['video_id']
