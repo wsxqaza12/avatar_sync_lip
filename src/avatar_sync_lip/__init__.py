@@ -1,5 +1,5 @@
 from .heygen.video_generator import HeyGenVideoGenerator
-# from .facefusion.facefusion_generator import FaceFusionGenerator
+from .full_body_generator import FullBodyAvatarGenerator
 
-__all__ = ['HeyGenVideoGenerator']
-__version__ = "0.1.0"
+__all__ = ['HeyGenVideoGenerator', 'FullBodyAvatarGenerator']
+__version__ = "1.0.0"

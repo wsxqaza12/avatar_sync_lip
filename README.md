@@ -9,7 +9,9 @@ Avatar Sync Lip 是一個 Python 包，提供了一個簡單的接口來使用 H
 - 下載生成的影片到指定路徑
 
 ### 全身動畫 avatar
-- 製作中
+- 生成全身動畫 avatar 視頻
+- 支持自定義音頻輸入
+- 多種預設角色可選
 
 # HeyGen API 文件
 ## 安裝
@@ -78,4 +80,42 @@ video_url = generator.generate_video(character='man1', audio_file_path='path/to/
 
 
 # 全身動畫 avatar 文件
- 製作中
+## 使用
+1. 首先，導入 FullBodyAvatarGenerator：
+```python
+from avatar_sync_lip import FullBodyAvatarGenerator
+```
+
+2. 創建 FullBodyAvatarGenerator 實例，需要提供 API URL：
+```python
+generator = FullBodyAvatarGenerator(api_url="http://0.0.0.0:1234")
+```
+
+3. 使用 generate_full_body_avatar 方法生成全身動畫 avatar 視頻：
+```python
+try:
+    video_url = generator.generate_full_body_avatar(
+        audio_path='test.mp3',
+        character_name='woman1',
+        save_path='input/video.mp4'
+    )
+    print(f"生成的視頻URL: {video_url}")
+except ValueError as e:
+    print(f"錯誤: {e}")
+```
+
+這個方法會上傳音頻文件，使用指定的角色生成全身動畫 avatar 視頻，然後將視頻下載到指定的路徑。它還會返回生成的視頻的 URL。
+
+## 參數說明
+
+- `audio_path`：音頻文件的路徑
+- `character_name`：要使用的角色名稱
+- `save_path`：生成的視頻保存路徑
+
+## 支持的角色
+
+目前支持的角色與 HeyGen API 部分相同，包括 "man1" 到 "man16" 和 "woman1" 到 "woman16"。
+
+## 錯誤處理
+
+該方法可能會拋出 ValueError 異常，建議使用 try-except 塊來處理可能的錯誤。

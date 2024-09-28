@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="avatar_sync_lip",
-    version="0.1.1",
+    version="1.0.0",
     author="ChiChieh Huang",
     author_email="cch.chihchieh@gmail.com",
     description="A package for generating videos using HeyGen API",
