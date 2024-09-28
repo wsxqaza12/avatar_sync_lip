@@ -10,7 +10,7 @@ Avatar Sync Lip 是一個 Python 包，提供了一個簡單的接口來使用 H
 
 ### 全身動畫 avatar
 - 生成全身動畫 avatar 視頻
-- 支持自定義音頻輸入
+- 支持自定義音檔輸入
 - 多種預設角色可選
 
 ## 安裝
@@ -99,22 +99,22 @@ from avatar_sync_lip import FullBodyAvatarGenerator
 generator = FullBodyAvatarGenerator(api_url="http://0.0.0.0:1234")
 ```
 
-3. 使用 generate_full_body_avatar 方法生成全身動畫 avatar 視頻：
+3. 使用 generate_full_body_avatar 方法生成全身動畫 avatar 影片：
 ```python
 video_url = generator.generate_full_body_avatar(
-    audio_path='test.mp3',
     character='woman1',
+    audio_file_path='test.mp3',
     save_path='input/video.mp4'
 )
 ```
 
-這個方法會上傳音頻文件，使用指定的角色生成全身動畫 avatar 視頻，然後將視頻下載到指定的路徑。它還會返回生成的視頻的 URL，方便後須續處理。
+這個方法會上傳音檔文件，使用指定的角色生成全身動畫 avatar 影片，然後將影片下載到指定的路徑。它還會返回生成的影片的 URL，方便後須續處理。
 
 ## 參數說明
 
-- `audio_path`：音頻文件的路徑
 - `character`：要使用的角色名稱
-- `save_path`：生成的視頻保存路徑
+- `audio_file_path`：音檔文件的路徑
+- `save_path`：生成的影片保存路徑
 
 ## 支持的角色
 
