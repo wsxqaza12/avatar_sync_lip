@@ -5,7 +5,7 @@ from .config import ALLOWED_CHARACTERS
 
 
 class FullBodyAvatarGenerator:
-    def __init__(self, api_base_ip="216.234.102.170", api_port="10620"):
+    def __init__(self, api_base_ip, api_port):
         self.api_url = f"http://{api_base_ip}:{api_port}"
 
     def generate_full_body_avatar(self, audio_file_path, character, save_path):
