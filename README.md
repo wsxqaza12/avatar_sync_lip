@@ -94,9 +94,9 @@ video_url = generator.generate_video(
 from avatar_sync_lip import FullBodyAvatarGenerator
 ```
 
-2. 創建 FullBodyAvatarGenerator 實例，需要提供 API URL：
+2. 創建 FullBodyAvatarGenerator 實例，需要提供 API 的 base ip 和 port：
 ```python
-generator = FullBodyAvatarGenerator(api_url="http://0.0.0.0:1234")
+generator = FullBodyAvatarGenerator(api_base_ip="192.168.1.100", api_port="8080")
 ```
 
 3. 使用 generate_full_body_avatar 方法生成全身動畫 avatar 影片：
